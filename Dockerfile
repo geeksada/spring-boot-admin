@@ -1,6 +1,6 @@
 FROM frolvlad/alpine-oraclejdk8:slim
 VOLUME /tmp
-ADD spring-boot-admin-1.0.jar app.jar
+ADD target/spring-boot-admin-1.0.jar app.jar
 RUN sh -c 'touch /app.jar'
 EXPOSE 8080
 ENV JAVA_OPTS=""

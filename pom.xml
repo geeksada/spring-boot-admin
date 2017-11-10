@@ -57,21 +57,11 @@
 			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.13</version>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.3.4</version>
 				<configuration>
-					<imageTags>
-						<imageTag>1.5.4</imageTag>
-					</imageTags>
-					<imageName>geeksada/${docker.image.name}</imageName>
-					<dockerDirectory>${basedir}/src/main/docker</dockerDirectory>
-					<resources>
-						<resource>
-							<targetPath>/</targetPath>
-							<directory>${project.build.directory}</directory>
-							<include>${project.build.finalName}.jar</include>
-						</resource>
-					</resources>
+					<repository>geeksada/${docker.image.name}</repository>
+					<tag>1.5.4</tag>
 				</configuration>
 			</plugin>
 			</plugins>

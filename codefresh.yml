@@ -1,0 +1,15 @@
+version: '1.0'
+
+steps:
+ mvn_package:
+  description: package application
+  image: fabric8/maven-builder
+  commands:
+  - mvn package -T 1C -Dmaven.test.skip=true
+ BuildingDockerImage:
+    title: Building Docker Image
+    type: build
+    image_name: gexadaktilos/springbootadmin
+    working_directory: ./
+    dockerfile: Dockerfile
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
